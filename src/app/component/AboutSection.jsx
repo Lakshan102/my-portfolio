@@ -2,20 +2,25 @@
 import React, { useTransition, useState } from "react";
 import Image from "next/image";
 import TabButton from "./TabButton";
+import { FaPhp, FaHtml5, FaCss3Alt, FaReact, FaNodeJs, FaJava, FaAws, FaLinkedin, FaCertificate, FaGraduationCap } from "react-icons/fa";
+import { SiMongodb, SiExpress, SiSpringboot, SiTailwindcss, SiNextdotjs, SiFlutter, SiReact, SiPhp } from "react-icons/si";
+import { MdSchool, MdVerifiedUser } from "react-icons/md";
 
 const Tab_Data = [
   {
     title: "Skills",
     id: "skills",
     content: (
-      <ul className="list-disc pl-2">
-        <li>PHP</li>
-        <li>HTML</li>
-        <li>CSS</li>
-        <li>MERN Stack</li>
-        <li>Spring Boot</li>
-        <li>Tailwind</li>
-        <li>Next js</li>
+      <ul className="list-disc pl-2 space-y-2">
+        <li className="flex items-center gap-2"><SiPhp className="text-purple-400" /> PHP</li>
+        <li className="flex items-center gap-2"><FaHtml5 className="text-orange-500" /> HTML</li>
+        <li className="flex items-center gap-2"><FaCss3Alt className="text-blue-400" /> CSS</li>
+        <li className="flex items-center gap-2"><FaReact className="text-cyan-400" /> MERN Stack</li>
+        <li className="flex items-center gap-2"><SiSpringboot className="text-green-500" /> Spring Boot</li>
+        <li className="flex items-center gap-2"><SiTailwindcss className="text-teal-400" /> Tailwind</li>
+        <li className="flex items-center gap-2"><SiNextdotjs className="text-white" /> Next.js</li>
+        <li className="flex items-center gap-2"><FaReact className="text-cyan-400" /> React Native</li>
+        <li className="flex items-center gap-2"><SiFlutter className="text-blue-500" /> Flutter</li>
       </ul>
     ),
   },
@@ -24,7 +29,9 @@ const Tab_Data = [
     id: "education",
     content: (
       <ul className="list-disc pl-2">
-        <li>Undergraduate University of Colombo School of Computing</li>
+        <li className="flex items-center gap-2">
+          <MdSchool className="text-blue-400" /> Undergraduate University of Colombo School of Computing
+        </li>
       </ul>
     ),
   },
@@ -32,11 +39,11 @@ const Tab_Data = [
     title: "Certificates",
     id: "certificates",
     content: (
-      <ul className="list-disc pl-2">
-        <li>ISC2 Certificates</li>
-        <li>Simplilearn Certificates</li>
-        <li>AWS certificates</li>
-        <li>Linkedin Certificates</li>
+      <ul className="list-disc pl-2 space-y-2">
+        <li className="flex items-center gap-2"><MdVerifiedUser className="text-green-400" /> ISC2 Certificates</li>
+        <li className="flex items-center gap-2"><FaCertificate className="text-yellow-400" /> Simplilearn Certificates</li>
+        <li className="flex items-center gap-2"><FaAws className="text-orange-400" /> AWS certificates</li>
+        <li className="flex items-center gap-2"><FaLinkedin className="text-blue-500" /> Linkedin Certificates</li>
       </ul>
     ),
   },
@@ -52,7 +59,7 @@ const AboutSection = () => {
     });
   };
   return (
-    <section className="text-white">
+    <section className="text-white" id="about">
       <div className="md:grid md:grid-cols-2 gap-8 items-center py-8 px-4 xl:gap-16 sm:py-16 xl:px-16">
         <Image
           src="/images/about-image.jpg"

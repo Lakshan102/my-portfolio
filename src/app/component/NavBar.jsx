@@ -4,6 +4,7 @@ import Link from "next/link";
 import NavLink from "./NavLink";
 import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/solid";
 import MenuOverlay from "./MenuOverlay";
+import Image from "next/image";
 
 const navLink = [
   {
@@ -18,18 +19,27 @@ const navLink = [
     title: "Contact",
     path: "#contact",
   },
+  {
+    title: "Other",
+    path: "#club",
+  },
 ];
 
 export const NavBar = () => {
   const [navBarOpen, setNavBarOpen] = useState(false);
   return (
-    <nav className="fixed top-0 left-0 right-0 z-10 bg-[#121212] bg-opacity-90">
-      <div className="flex flex-wrap items-center justify-between mx-auto px-6 pt-5">
+    <nav className="fixed top-0 left-0 right-0 z-10 border border-[#33353F] bg-[#121212] bg-opacity-90">
+      <div className="flex container lg:py-4 flex-wrap items-center justify-between mx-auto px-6 pt-5">
         <Link
           href={"/"}
           className="text-2xl md:text-5xl text-white font-semibold "
         >
-          LOGO
+          <Image
+            src="/images/portfolio_logo.png"
+            alt="Logo"
+            width={150}
+            height={150}
+          />
         </Link>
         <div className="mobile-menu block md:hidden">
           {!navBarOpen ? (
@@ -52,7 +62,7 @@ export const NavBar = () => {
           <ul className="flex p-4 md:p-0 md:flex-row md:space-x-8 mt-0">
             {navLink.map((link, index) => (
               <li key={index}>
-                <NavLink href={link.path} title={link.title} />
+                <NavLink  href={link.path} title={link.title} />
               </li>
             ))}
           </ul>
