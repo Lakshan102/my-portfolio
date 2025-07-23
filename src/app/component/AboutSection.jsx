@@ -75,15 +75,11 @@ const AboutSection = () => {
             University of Colombo School of Computing, aspiring to become a
             skilled full-stack software developer. I enjoy turning ideas into
             real-world solutions and continuously learning new technologies to
-            expand my capabilities. With hands-on experience in the MERN stack,
-            Spring Boot, Next.js, Tailwind CSS, HTML/CSS, PHP, and SQL, I’ve
-            worked on several personal and academic projects, as well as two
-            industrial-level projects that enhanced my understanding of
-            real-world software development practices. I'm driven by a strong
-            interest in building efficient, user-friendly applications—whether
-            it’s frontend interfaces or robust backend systems. My goal is to
-            become a versatile developer who can contribute meaningfully across
-            the entire development lifecycle.
+            expand my capabilities. I’ve worked on several personal and academic
+            projects. I'm driven by a strong interest in building efficient,
+            user-friendly applications—whether it’s frontend interfaces or robust
+            backend systems. My goal is to become a versatile developer who can
+            contribute meaningfully across the entire development lifecycle.
           </p>
           <div className="flex flex-row mt-8 justify-start">
             <TabButton
