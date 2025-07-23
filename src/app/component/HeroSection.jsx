@@ -3,12 +3,27 @@ import React from 'react';
 import Image from 'next/image';
 import { TypeAnimation } from 'react-type-animation';
 import { motion } from 'framer-motion';
+import { ArrowDownTrayIcon } from '@heroicons/react/24/outline';
 
 
 
 
 
 const HeroSection = () => {
+    // Function to handle CV download with analytics tracking
+    const handleDownloadCV = () => {
+        // You can add analytics tracking here if needed
+        console.log('CV Download initiated');
+
+        // Create a temporary link element for download
+        const link = document.createElement('a');
+        link.href = '/cv.pdf';
+        link.download = 'Kavindu_Lakshan_CV.pdf';
+        document.body.appendChild(link);
+        link.click();
+        document.body.removeChild(link);
+    };
+
     return (
         <section className='lg:py-16'>
             <div className="grid grid-cols-1 lg:grid-cols-12">
@@ -47,15 +62,36 @@ const HeroSection = () => {
                     <p className="text-[#ADB7BE] text-base sm:text-lg lg:text-xl mb-6">
                         Now, I'm under graduate student in University of Colombo School of Computing.
                     </p>
-                    <div>
-                        <button className="px-6 py-3 rounded-full w-full sm:w-fit mr-4 bg-gradient-to-br from-blue-500 via-purple-500 to-black  hover:bg-slate-200 text-white" onClick={() => window.location.href = '#contact'}>
+                    <div className="flex flex-col sm:flex-row gap-4 sm:gap-0">
+                        <button
+                            className="px-6 py-3 rounded-full w-full sm:w-fit mr-4 bg-gradient-to-br from-blue-500 via-purple-500 to-black hover:bg-slate-200 text-white transition-all duration-300"
+                            onClick={() => window.location.href = '#contact'}
+                        >
                             Hire Me
                         </button>
-                        <button className="px-0.5 py-0.5 rounded-full w-full sm:w-fit bg-gradient-to-br from-blue-500 via-purple-500 to-black hover:bg-slate-800 text-white  mt-3">
-                            <span className="block bg-[#121212] hover:bg-slate-800 rounded-full px-5.5 py-2.5">
+                        {/* Option 1: Direct download link (recommended) */}
+                        <a
+                            href="/cv.pdf"
+                            download="Kavindu_Lakshan_CV.pdf"
+                            className="inline-block px-0.5 py-0.5 rounded-full w-full sm:w-fit bg-gradient-to-br from-blue-500 via-purple-500 to-black hover:bg-slate-800 text-white transition-all duration-300"
+                        >
+                            <span className="flex items-center justify-center gap-2 bg-[#121212] hover:bg-slate-800 rounded-full px-5 py-2.5 text-center transition-all duration-300">
+                                <ArrowDownTrayIcon className="w-4 h-4" />
+                                Download CV
+                            </span>
+                        </a>
+
+                        {/* Option 2: JavaScript function (uncomment to use instead)
+                        <button 
+                            onClick={handleDownloadCV}
+                            className="px-0.5 py-0.5 rounded-full w-full sm:w-fit bg-gradient-to-br from-blue-500 via-purple-500 to-black hover:bg-slate-800 text-white transition-all duration-300"
+                        >
+                            <span className="flex items-center justify-center gap-2 bg-[#121212] hover:bg-slate-800 rounded-full px-5 py-2.5 text-center transition-all duration-300">
+                                <ArrowDownTrayIcon className="w-4 h-4" />
                                 Download CV
                             </span>
                         </button>
+                        */}
                     </div>
                 </motion.div>
                 <motion.div initial={{ opacity: 0, scale: 0.5 }} animate={{ opacity: 1, scale: 1 }} transition={{ duration: 0.5 }} className="col-span-4 place-self-center mt-4 lg:mt-0">

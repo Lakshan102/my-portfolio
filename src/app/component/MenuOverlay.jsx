@@ -3,13 +3,15 @@ import NavLink from "./NavLink";
 
 const MenuOverlay = ({ links }) => {
   return (
-    <ul className="flex flex-col py-4 items-center">
-      {links.map((link, index) => (
-        <li key={index}>
-          <NavLink href={link.path} title={link.title} />
-        </li>
-      ))}
-    </ul>
+    <div className="mobile-menu-overlay bg-[#121212] border-t border-[#33353F]">
+      <ul className="flex flex-col py-6 px-4 space-y-4">
+        {links.map((link, index) => (
+          <li key={index} className="text-center">
+            <NavLink href={link.path} title={link.title} />
+          </li>
+        ))}
+      </ul>
+    </div>
   );
 };
 
