@@ -17,36 +17,36 @@ const projectData = [
     description:
       "Online Pharmacy Locator and Medicine Tracker, University Second year project",
     img: "images/ReMed.png",
-    tag: ["All", "PHP"],
+    tag: ["All", "Web"],
     gitUrl: "https://github.com/ReMed-ucsc",
     // previewUrl: "/",
 
   },
-  // {
-  //   id: 2,
-  //   title: "Spring Boot React Peoject",
-  //   description:
-  //     "Industrial project, Hotel Management System. spring boot backend ,react frontend. Microservice project",
-  //   img: "images/Hotel.png",
-  //   tag: ["All", "SpringBoot", "REACT"],
-  //   gitUrl: "https://github.com/SyncSixSolutions",
-  //   // previewUrl: "/",
-  // },
-  // {
-  //   id: 3,
-  //   title: "MERN Stack project",
-  //   description: "Online Learning Platform",
-  //   img: "images/lerningPlatform.jpg",
-  //   tag: ["All", "MERN", "REACT"],
-  //   gitUrl: "",
-  //   // previewUrl: "/",
-  // },
+  {
+    id: 2,
+    title: "LittleSteps",
+    description:
+      "DayCare Management System",
+    img: "images/LittleSteps.png",
+    tag: ["All", "Web", "Mobile"],
+    gitUrl: "https://github.com/LittleSteps2025/",
+    // previewUrl: "/",
+  },
+  {
+    id: 3,
+    title: "LinkTalk",
+    description: "Real Time Chat Application",
+    img: "images/LinkTalk.png",
+    tag: ["All" , "Mobile"],
+    gitUrl: "https://github.com/PramodiPeshila/real_time_chat_app",
+    // previewUrl: "/",
+  },
   {
     id: 4,
     title: "Next js Project",
     description: "My Portfolio",
     img: "images/portfolio.png",
-    tag: ["All", "NEXT"],
+    tag: ["All", "Web"],
     gitUrl: "https://github.com/Lakshan102/my-portfolio",
     // previewUrl: "/",
   },
@@ -55,7 +55,7 @@ const projectData = [
     title: "MERN Stack Project",
     description: "FoodWagon Online Food Ordering App",
     img: "images/FoodWagon.jpeg",
-    tag: ["All", "MERN", "REACT"],
+    tag: ["All", "Web"],
     gitUrl: "https://github.com/Lakshan102/mern-stack-group-project",
     // previewUrl: "/",
   },
@@ -93,24 +93,15 @@ const ProjectSection = () => {
           />
           <ProjectTags
             onClick={handelTag}
-            name="PHP"
-            isSelected={tag === "PHP"}
+            name="Web"
+            isSelected={tag === "Web"}
           />
           <ProjectTags
             onClick={handelTag}
-            name="REACT"
-            isSelected={tag === "REACT"}
+            name="Mobile"
+            isSelected={tag === "Mobile"}
           />
-          <ProjectTags
-            onClick={handelTag}
-            name="MERN"
-            isSelected={tag === "MERN"}
-          />
-          <ProjectTags
-            onClick={handelTag}
-            name="NEXT"
-            isSelected={tag === "NEXT"}
-          />
+          
         </div>
 
         {/* Project grid with responsive layout */}
