@@ -103,7 +103,7 @@ const EmailSection = () => {
               <form onSubmit={handleSubmit(onSubmit)} className="flex flex-col space-y-4 sm:space-y-6">
                 <input
                   type="hidden"
-                  value={process.env.ACCESS_KEY}
+                  value={process.env.NEXT_PUBLIC_ACCESS_KEY}
                   {...register("access_key")}
                 />
                 <input type="hidden" {...register("subject")} />
